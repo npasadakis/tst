@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Your Trip - Heraklion Sailing Adventures</title>
+    <meta name="description" content="Book your sailing adventure to Dia Island. Choose from private charters, full day or half day trips.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="logo">
+                    <img src="images/logo-placeholder.svg" alt="Sailing Adventures Logo">
+                    <span>Heraklion Sailing</span>
+                </div>
+                <button class="mobile-menu-toggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="private-trip.html">Private Trip</a></li>
+                    <li><a href="full-day-trip.html">Full Day Trip</a></li>
+                    <li><a href="half-day-trip.html">Half Day Trip</a></li>
+                    <li><a href="booking.html" class="btn-nav-booking active">Book Now</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="language-selector">
+                        <a href="#" class="language-toggle">🌐 EN ▾</a>
+                        <ul class="language-dropdown">
+                            <li><a href="booking.html">🇬🇧 English</a></li>
+                            <li><a href="booking-el.html">🇬🇷 Ελληνικά</a></li>
+                            <li><a href="booking-de.html">🇩🇪 Deutsch</a></li>
+                            <li><a href="booking-fr.html">🇫🇷 Français</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header page-header-small">
+        <div class="page-header-image">
+            <img src="images/contact-header.jpg" alt="Book Your Sailing Trip">
+            <div class="page-header-overlay"></div>
+        </div>
+        <div class="page-header-content">
+            <h1>Book Your Sailing Adventure</h1>
+            <p>Just a few steps away from an unforgettable experience</p>
+        </div>
+    </section>
+
+    <!-- Booking Section -->
+    <section class="booking-section">
+        <div class="container">
+            <div class="booking-layout">
+                <!-- Booking Form -->
+                <div class="booking-form-container">
+                    <div class="booking-steps">
+                        <div class="step active" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="step-title">Select Trip</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="step-title">Details</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="step-title">Confirm</span>
+                        </div>
+                    </div>
+
+                    <form id="booking-form" class="booking-form">
+                        <!-- Step 1: Trip Selection -->
+                        <div class="form-step active" data-step="1">
+                            <h2>Select Your Trip</h2>
+
+                            <div class="trip-selection">
+                                <label class="trip-option">
+                                    <input type="radio" name="trip-type" value="private" required>
+                                    <div class="trip-option-content">
+                                        <h3>Private Sailing Trip</h3>
+                                        <p>Charter your own boat for 1+ days</p>
+                                        <span class="trip-price">Contact for pricing</span>
+                                    </div>
+                                </label>
+
+                                <label class="trip-option">
+                                    <input type="radio" name="trip-type" value="full-day" required>
+                                    <div class="trip-option-content">
+                                        <h3>Full Day Sailing Trip</h3>
+                                        <p>Morning to sunset (11 hours)</p>
+                                        <span class="trip-price">From €120/person</span>
+                                    </div>
+                                </label>
+
+                                <label class="trip-option">
+                                    <input type="radio" name="trip-type" value="half-day-morning" required>
+                                    <div class="trip-option-content">
+                                        <h3>Half Day - Morning Trip</h3>
+                                        <p>09:00 - 13:30 (4.5 hours)</p>
+                                        <span class="trip-price">From €75/person</span>
+                                    </div>
+                                </label>
+
+                                <label class="trip-option">
+                                    <input type="radio" name="trip-type" value="half-day-sunset" required>
+                                    <div class="trip-option-content">
+                                        <h3>Half Day - Sunset Trip</h3>
+                                        <p>16:00 - 20:30 (4.5 hours)</p>
+                                        <span class="trip-price">From €75/person</span>
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-primary" onclick="nextStep()">Next Step</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Personal Details & Preferences -->
+                        <div class="form-step" data-step="2">
+                            <h2>Your Details</h2>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="first-name">First Name *</label>
+                                    <input type="text" id="first-name" name="first-name" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="last-name">Last Name *</label>
+                                    <input type="text" id="last-name" name="last-name" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="email">Email Address *</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number *</label>
+                                    <input type="tel" id="phone" name="phone" required>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="country">Country</label>
+                                    <input type="text" id="country" name="country">
+                                </div>
+                                <div class="form-group">
+                                    <label for="nationality">Nationality</label>
+                                    <input type="text" id="nationality" name="nationality">
+                                </div>
+                            </div>
+
+                            <h3 style="margin-top: 2rem;">Trip Details</h3>
+
+                            <div class="form-row">
+                                <div class="form-group">
+                                    <label for="trip-date">Preferred Date *</label>
+                                    <input type="date" id="trip-date" name="trip-date" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="guests">Number of Guests *</label>
+                                    <input type="number" id="guests" name="guests" min="1" max="12" required>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="alternative-dates">Alternative Dates (optional)</label>
+                                <input type="text" id="alternative-dates" name="alternative-dates" placeholder="e.g., June 15-20, 2024">
+                            </div>
+
+                            <h3 style="margin-top: 2rem;">Additional Options</h3>
+
+                            <div class="checkbox-group-inline">
+                                <label>
+                                    <input type="checkbox" name="snorkeling" id="snorkeling">
+                                    <span>Snorkeling Equipment</span>
+                                </label>
+                                <label>
+                                    <input type="checkbox" name="paddleboard" id="paddleboard">
+                                    <span>Paddle Board</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="dietary">Dietary Requirements / Allergies</label>
+                                <textarea id="dietary" name="dietary" rows="3" placeholder="Please let us know if you have any dietary restrictions or allergies"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="special-requests">Special Requests or Occasions</label>
+                                <textarea id="special-requests" name="special-requests" rows="3" placeholder="Birthday, anniversary, special celebration, etc."></textarea>
+                            </div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-outline" onclick="prevStep()">Back</button>
+                                <button type="button" class="btn btn-primary" onclick="nextStep()">Review Booking</button>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Confirmation -->
+                        <div class="form-step" data-step="3">
+                            <h2>Review Your Booking</h2>
+
+                            <div class="booking-summary">
+                                <div class="summary-section">
+                                    <h3>Trip Information</h3>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Trip Type:</span>
+                                        <span class="summary-value" id="summary-trip"></span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Date:</span>
+                                        <span class="summary-value" id="summary-date"></span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Guests:</span>
+                                        <span class="summary-value" id="summary-guests"></span>
+                                    </div>
+                                </div>
+
+                                <div class="summary-section">
+                                    <h3>Contact Information</h3>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Name:</span>
+                                        <span class="summary-value" id="summary-name"></span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Email:</span>
+                                        <span class="summary-value" id="summary-email"></span>
+                                    </div>
+                                    <div class="summary-item">
+                                        <span class="summary-label">Phone:</span>
+                                        <span class="summary-value" id="summary-phone"></span>
+                                    </div>
+                                </div>
+
+                                <div class="summary-section" id="options-section" style="display: none;">
+                                    <h3>Additional Options</h3>
+                                    <div id="summary-options"></div>
+                                </div>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <span>I agree to the <a href="#" class="link">terms and conditions</a> and <a href="#" class="link">cancellation policy</a></span>
+                                </label>
+                            </div>
+
+                            <div class="form-group checkbox-group">
+                                <label>
+                                    <input type="checkbox" name="newsletter" id="newsletter">
+                                    <span>Send me special offers and sailing tips</span>
+                                </label>
+                            </div>
+
+                            <div class="booking-note">
+                                <p><strong>Please note:</strong> This is a booking request. We will contact you within 24 hours to confirm availability and finalize your reservation.</p>
+                            </div>
+
+                            <div id="booking-form-message" class="form-message"></div>
+
+                            <div class="form-navigation">
+                                <button type="button" class="btn btn-outline" onclick="prevStep()">Back</button>
+                                <button type="submit" class="btn btn-primary btn-large">Submit Booking Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Booking Sidebar -->
+                <div class="booking-sidebar">
+                    <div class="sidebar-card">
+                        <h3>Why Book With Us?</h3>
+                        <ul class="benefits-list">
+                            <li>✓ Best price guarantee</li>
+                            <li>✓ Instant booking confirmation</li>
+                            <li>✓ Experienced crew</li>
+                            <li>✓ Modern, safe boats</li>
+                            <li>✓ Flexible cancellation</li>
+                            <li>✓ Small group sizes</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card">
+                        <h3>What's Included</h3>
+                        <ul class="benefits-list">
+                            <li>Professional skipper</li>
+                            <li>All meals & drinks</li>
+                            <li>Snorkeling equipment</li>
+                            <li>Paddleboard</li>
+                            <li>Fuel & port fees</li>
+                            <li>Safety equipment</li>
+                        </ul>
+                    </div>
+
+                    <div class="sidebar-card help-card">
+                        <h3>Need Help?</h3>
+                        <p>Have questions about your booking?</p>
+                        <p><strong>📞 +30 123 456 7890</strong></p>
+                        <p><strong>📧 info@heraklionsailing.com</strong></p>
+                        <a href="contact.html" class="btn btn-outline btn-small">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Heraklion Sailing</h3>
+                    <p>Experience the beauty of Dia Island with professional sailing trips from Heraklion port.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="private-trip.html">Private Trip</a></li>
+                        <li><a href="full-day-trip.html">Full Day Trip</a></li>
+                        <li><a href="half-day-trip.html">Half Day Trip</a></li>
+                        <li><a href="booking.html">Book Now</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <p>Heraklion Port, Crete<br>
+                    Email: info@heraklionsailing.com<br>
+                    Phone: +30 123 456 7890</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Heraklion Sailing Adventures. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+    <script src="js/booking.js"></script>
+</body>
+</html>
