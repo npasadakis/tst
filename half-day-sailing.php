@@ -28,7 +28,7 @@ $pageTitle = t('meta.half_day_title');
                 <div class="col-lg-8">
                     <!-- Featured Image -->
                     <div class="trip-featured-image mb-4">
-                        <img src="<?= getPlaceholderImage(900, 500, 'Half+Day+Sailing') ?>" alt="<?= t('trips.half_day.title') ?>" class="img-fluid rounded-4">
+                        <img src="<?= getImage('half-day-1.svg', 'trips') ?>" alt="<?= t('trips.half_day.title') ?>" class="img-fluid rounded-4">
                     </div>
 
                     <!-- Description -->

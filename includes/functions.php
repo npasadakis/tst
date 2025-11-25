@@ -111,21 +111,30 @@ function getLanguageSwitcherUrls(): array
 }
 
 /**
- * Get placeholder image URL
+ * Get image URL - returns local assets or fallback
  */
-function getPlaceholderImage(int $width = 800, int $height = 600, string $text = 'Sailing'): string
+function getImage(string $imageName, string $folder = ''): string
 {
-    return "https://placehold.co/{$width}x{$height}/0077b6/ffffff?text=" . urlencode($text);
+    $basePath = 'assets/images/';
+    $fullPath = $folder ? $basePath . $folder . '/' . $imageName : $basePath . $imageName;
+
+    // Check if file exists, return path
+    if (file_exists(__DIR__ . '/../' . $fullPath)) {
+        return $fullPath;
+    }
+
+    // Fallback to placeholder service if local file not found
+    return "https://placehold.co/800x600/0077b6/ffffff?text=" . urlencode(pathinfo($imageName, PATHINFO_FILENAME));
 }
 
 /**
- * Get gallery images (placeholder)
+ * Get gallery images
  */
 function getGalleryImages(string $type = 'general', int $count = 6): array
 {
     $images = [];
     $captions = [
-        'general' => ['Sailing Adventure', 'Crystal Waters', 'Dia Island', 'Sunset Cruise', 'Swimming Stop', 'On Board'],
+        'general' => ['Sailing Adventure', 'Crystal Waters', 'Dia Island', 'Sunset Cruise', 'Swimming Stop', 'On Board', 'Beautiful Coast', 'Blue Waters', 'Yacht Life', 'Sea Views', 'Island Tour', 'Perfect Day'],
         'private' => ['Private Charter', 'Exclusive Experience', 'Your Own Pace', 'Hidden Coves', 'Luxury Sailing', 'Personal Service'],
         'full_day' => ['Morning Departure', 'Dia Island Views', 'Swimming Break', 'Lunch on Board', 'Exploring Coast', 'Sunset Return'],
         'half_day' => ['Quick Getaway', 'Refreshing Swim', 'Beautiful Views', 'Perfect Escape', 'Sea Breeze', 'Memories']
@@ -133,11 +142,27 @@ function getGalleryImages(string $type = 'general', int $count = 6): array
 
     $typeCaptions = $captions[$type] ?? $captions['general'];
 
+    // Determine folder and filename prefix based on type
+    $folder = 'trips';
+    $prefix = match($type) {
+        'private' => 'private-sailing',
+        'full_day' => 'full-day',
+        'half_day' => 'half-day',
+        default => 'gallery'
+    };
+
+    if ($type === 'general') {
+        $folder = 'gallery';
+    }
+
     for ($i = 0; $i < $count; $i++) {
+        $imageNum = $i + 1;
         $caption = $typeCaptions[$i % count($typeCaptions)];
+        $imageName = "{$prefix}-{$imageNum}.svg";
+
         $images[] = [
-            'src' => getPlaceholderImage(800, 600, $caption),
-            'thumb' => getPlaceholderImage(400, 300, $caption),
+            'src' => getImage($imageName, $folder),
+            'thumb' => getImage($imageName, $folder), // Using same for now, could create thumbnails
             'caption' => $caption
         ];
     }

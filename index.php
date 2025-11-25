@@ -8,8 +8,8 @@ $pageTitle = t('meta.home_title');
 
     <!-- Hero Section with Video -->
     <section class="hero">
-        <!-- Video Background (placeholder - use an actual video in production) -->
-        <video class="hero-video" autoplay muted loop playsinline poster="<?= getPlaceholderImage(1920, 1080, 'Sailing+Crete') ?>">
+        <!-- Video Background -->
+        <video class="hero-video" autoplay muted loop playsinline poster="<?= getImage('hero-bg.svg') ?>">
             <source src="assets/videos/sailing-hero.mp4" type="video/mp4">
             <!-- Fallback if no video available -->
         </video>
@@ -64,7 +64,7 @@ $pageTitle = t('meta.home_title');
                 </div>
                 <div class="col-lg-6">
                     <div class="welcome-image">
-                        <img src="<?= getPlaceholderImage(600, 500, 'Cretan+Sailing') ?>" alt="Sailing in Crete" class="img-fluid">
+                        <img src="<?= getImage('sailing-sunset.svg') ?>" alt="Sailing in Crete" class="img-fluid">
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@ $pageTitle = t('meta.home_title');
                 <div class="col-lg-4 col-md-6">
                     <div class="trip-card">
                         <div class="trip-image">
-                            <img src="<?= getPlaceholderImage(600, 400, 'Private+Charter') ?>" alt="<?= t('trips.private.title') ?>">
+                            <img src="<?= getImage('private-sailing-1.svg', 'trips') ?>" alt="<?= t('trips.private.title') ?>">
                             <span class="trip-duration"><?= t('trips.private.duration') ?></span>
                         </div>
                         <div class="trip-content">
@@ -101,7 +101,7 @@ $pageTitle = t('meta.home_title');
                 <div class="col-lg-4 col-md-6">
                     <div class="trip-card">
                         <div class="trip-image">
-                            <img src="<?= getPlaceholderImage(600, 400, 'Full+Day+Trip') ?>" alt="<?= t('trips.full_day.title') ?>">
+                            <img src="<?= getImage('full-day-1.svg', 'trips') ?>" alt="<?= t('trips.full_day.title') ?>">
                             <span class="trip-duration"><?= t('trips.full_day.duration') ?></span>
                         </div>
                         <div class="trip-content">
@@ -119,7 +119,7 @@ $pageTitle = t('meta.home_title');
                 <div class="col-lg-4 col-md-6">
                     <div class="trip-card">
                         <div class="trip-image">
-                            <img src="<?= getPlaceholderImage(600, 400, 'Half+Day+Trip') ?>" alt="<?= t('trips.half_day.title') ?>">
+                            <img src="<?= getImage('half-day-1.svg', 'trips') ?>" alt="<?= t('trips.half_day.title') ?>">
                             <span class="trip-duration"><?= t('trips.half_day.duration') ?></span>
                         </div>
                         <div class="trip-content">

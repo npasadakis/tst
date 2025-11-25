@@ -5,9 +5,7 @@
                 <!-- About -->
                 <div class="col-lg-4 col-md-6">
                     <div class="footer-brand d-flex align-items-center mb-3">
-                        <div class="logo-placeholder me-2">
-                            <i class="bi bi-tsunami"></i>
-                        </div>
+                        <img src="<?= getImage('logo-white.svg', 'logo') ?>" alt="<?= t('meta.site_name') ?>" class="footer-logo me-2" width="45" height="45">
                         <span class="brand-text"><?= t('meta.site_name') ?></span>
                     </div>
                     <p class="footer-desc"><?= t('footer.description') ?></p>

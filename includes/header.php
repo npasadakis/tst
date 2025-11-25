@@ -1,7 +1,7 @@
 <?php
 declare(strict_types=1);
 
-require_once __DIR__ . '/translations.php';
+require_once __DIR__ . '/content.php';
 require_once __DIR__ . '/functions.php';
 
 $currentLang = getCurrentLanguage();
@@ -29,9 +29,7 @@ $langUrls = getLanguageSwitcherUrls();
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand d-flex align-items-center" href="<?= langUrl('index.php') ?>">
-                <div class="logo-placeholder me-2">
-                    <i class="bi bi-tsunami"></i>
-                </div>
+                <img src="<?= getImage('logo-white.svg', 'logo') ?>" alt="<?= t('meta.site_name') ?>" class="navbar-logo me-2" width="45" height="45">
                 <span class="brand-text"><?= t('meta.site_name') ?></span>
             </a>
 

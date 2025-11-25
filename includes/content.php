@@ -1,7 +1,8 @@
 <?php
 /**
- * Translations and Content for Sailing Business Website
- * All website content in English, Greek, German, and French
+ * Content and Translations for Sailing Business Website
+ * All website content and translations in English, Greek, German, and French
+ * Also includes image and video asset definitions
  */
 
 $translations = [
